@@ -49,8 +49,8 @@ function sayHello() {
 
 sayHello();
 
-let sayWorld = function() {
-return 'World';
+let sayWorld = function () {
+  return 'World';
 };
 
 console.log(sayWorld());
@@ -73,38 +73,81 @@ user.sayHallo = sayHallo();
 
 // Q8 引数
 let calc = {
- add(x,y) {
-console.log(x + y);
- },
- subtract(x,y) {
-  console.log(x - y);
- },
- multiply(x,y) {
-  console.log(x * y);
- },
- divide(x,y) {
-  console.log(x / y);
- }
+  add(x, y) {
+    console.log(x + y);
+  },
+  subtract(x, y) {
+    console.log(x - y);
+  },
+  multiply(x, y) {
+    console.log(x * y);
+  },
+  divide(x, y) {
+    console.log(x / y);
+  }
 };
 
-calc.add(3,4);
-calc.subtract(11,1);
-calc.multiply(7,7);
-calc.divide(10,2);
+calc.add(3, 4);
+calc.subtract(11, 1);
+calc.multiply(7, 7);
+calc.divide(10, 2);
 
 // Q9 返り値
-function remainder(x,y) {
+function remainder(x, y) {
   return x % y;
 };
 
-console.log('5を3で割ったあまりは' + remainder(5,3) + 'です。');
+console.log('5を3で割ったあまりは' + remainder(5, 3) + 'です。');
 
 // Q10 スコープ
-function foo() {
-  let x = 1;
-}
-console.log(x);
+// function foo() {
+//   let x = 1;
+// }
+// console.log(x);
 
 // Q10 回答
 // console.log(x);で出力しようとしているxは関数fooのローカル変数である為、スコープ外となりうまく参照することが出来ていない。
 // その為console.log(x);での出力は未定義となりエラーが発生する。
+
+// 応用編 問題
+// Q1 標準組み込みオブジェクト
+console.log(Math.random());
+
+// Q2 コールバック関数
+function sayHalloWorld() {
+  console.log('Hello World!');
+}
+
+setTimeout(sayHalloWorld, 3000);
+
+// Q3 if
+let num = 18;
+if (num > 0) {
+  console.log('num is greater than 0');
+} else if (num < 0) {
+  console.log('num is less than 0');
+} else if (num === 0) {
+  console.log('num is 0');
+};
+
+// Q4 for
+let numbers = [];
+for (let i = 0; i < 100; i++) {
+  // console.log(i);
+  numbers.push(i);
+};
+
+console.log(numbers);
+
+// Q5 for × if
+let mixed = [4, '2', 5, '8', '9', 0, 1];
+for (let i = 0; i < mixed.length; i++) {
+  // console.log(mixed[i]);
+  if (typeof mixed[i] === 'number' && mixed[i] % 2 === 0) {
+    console.log('even');
+  } else if (typeof mixed[i] === 'number' && mixed[i] % 2 !== 0) {
+    console.log('odd');
+  } else {
+    console.log('not number');
+  };
+};
