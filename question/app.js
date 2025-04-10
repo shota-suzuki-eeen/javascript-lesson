@@ -111,7 +111,7 @@ console.log('5を3で割ったあまりは' + remainder(5, 3) + 'です。');
 
 // 応用編 問題
 // Q1 標準組み込みオブジェクト
-console.log(Math.random());
+console.log(Math.floor(Math.random() * 10));
 
 // Q2 コールバック関数
 function sayHalloWorld() {
