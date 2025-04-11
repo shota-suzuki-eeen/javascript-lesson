@@ -56,12 +56,6 @@ let sayWorld = function () {
 console.log(sayWorld());
 
 // Q7 メソッド
-// let user = {
-//   name: 'John',
-//   age: 26,
-//   bloodType: 'A',
-//   favorite: 'card',
-// };
 user.birthday = '2000-09-27'
 console.log(user);
 
@@ -99,12 +93,6 @@ function remainder(x, y) {
 
 console.log('5を3で割ったあまりは' + remainder(5, 3) + 'です。');
 
-// Q10 スコープ
-// function foo() {
-//   let x = 1;
-// }
-// console.log(x);
-
 // Q10 回答
 // console.log(x);で出力しようとしているxは関数fooのローカル変数である為、スコープ外となりうまく参照することが出来ていない。
 // その為console.log(x);での出力は未定義となりエラーが発生する。
@@ -133,7 +121,6 @@ if (num > 0) {
 // Q4 for
 let numbers = [];
 for (let i = 0; i < 100; i++) {
-  // console.log(i);
   numbers.push(i);
 };
 
@@ -142,12 +129,12 @@ console.log(numbers);
 // Q5 for × if
 let mixed = [4, '2', 5, '8', '9', 0, 1];
 for (let i = 0; i < mixed.length; i++) {
-  // console.log(mixed[i]);
-  if (typeof mixed[i] === 'number' && mixed[i] % 2 === 0) {
-    console.log('even');
-  } else if (typeof mixed[i] === 'number' && mixed[i] % 2 !== 0) {
-    console.log('odd');
-  } else {
+  if (typeof mixed[i] === 'string') {
     console.log('not number');
+  } else if (
+    typeof mixed[i] === 'number' && mixed[i] % 2 === 0) {
+    console.log('even');
+  } else {
+    console.log('odd');
   };
 };
